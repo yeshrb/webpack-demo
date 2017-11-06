@@ -1,17 +1,17 @@
 import _ from 'lodash';
-import './style.css';
-import Icon from './icon.jpg';
-import Data from './data.xml';
+import printMe from './print.js';
 
 function component() {
-    var element = document.createElement('div');
-    element.innerHTML = _.join(['hello', 'webpack'], ' ');
-  element.classList.add('hello');
+  var element = document.createElement('div');
+  var btn = document.createElement('button');
 
-  var myIcon = new Image();
-  myIcon.src = Icon;
-  console.log(Data);
-    return element;
+  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+
+  btn.innerHTML = 'Click me and check the console!';
+  btn.onclick = printMe;
+  element.appendChild(btn);
+
+  return element;
 }
 
 document.body.appendChild(component());
